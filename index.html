@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta charset="utf-8">
+		<title>Booking.com/Home</title>
+		<meta name="viewport" content="width=device-width , initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="All.css">
+		
+		
+
+</head>
+
+<body>
+
+	<div id="menu">
+		<p class="logo">Booking.com</p>
+		<input id="bt" type="checkbox" autocomplete="off">
+		<label for="bt" class="btn">&#9776;</label>
+		<ul class="nav">
+			<li><a href="index.html" class="active">Home</a></li>
+			<li><a href="Services.html">Service</a></li>
+			<li><a href="#">Help</a></li>
+			<li><a href="Contact_us.html">Contact</a></li>
+		</ul>
+	</div>
+	<div class="btwn" >
+			<div class="content">
+				<div class="homecontent">
+				<small >Welcome to our </small>
+				<h1>Booking.com Tour & Travels</h1>
+				<a href="About.html"><button type="button" class="Aboutbtn" name="About">About Us</button></a>
+				</div>
+			</div>
+
+			<p>
+      <button id="signbtn" class="button" data-modal="modalOne">Login / Signup</button>
+    </p>
+
+    <div id="modalOne" class="modal">
+      <div class="modal-content">
+        <div class="contact-form">
+          <a class="close">&times;</a>
+          <form action="/">
+          	<div id="one">
+	            <h1>Log In</h1>
+    	       	<h4 class="email_txt">Email or Mobile</h4>
+        	    <input type="Email" name="Email" placeholder="Email or Mobile" class="inputtyp">
+            	<h4 class="pass_txt">Password</h4>
+            	<input type="Password" name="Pass" placeholder="Password" class="inputtyp"><br>
+            	<input type="button" id="Loginbtn" value="Login"><br>Don't have an account?  <input type="button" value="Signup"  id="snup" class="lgn">
+            </div>
+            <div id="two" style="display: none;" class="sgninpt">
+            	<h1>Sign up</h1>
+           		<h4 class="text">Enter Full Name</h4>
+              <input type="Text" name="Full Name" placeholder="Full Name" class="inpts"><br>
+              <h4 class="text">Mobile Number</h4>
+              <input type="text" name="Mobile" placeholder="Mobile" class="inpts"><br>
+              <h4 class="text">Enter Email Id</h4>
+              <input type="Email" name="Email" placeholder="Enter your email" class="inpts"><br>
+              <h4 class="text">New Password</h4>
+              <input type="Password" name="New pass" placeholder="New Password" class="inpts"><br>
+              <h4 class="text">Confirm Password</h4>
+              <input type="Password" name="Confirm pass" placeholder="Confirm Password" class="inpts"><br>
+
+            	<input type="button" id="Loginbtn" value="Sign Up"><br>Already have an account. <input type="button" value="Login" id="lgn" class="lgn" >
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+    <script>
+    	let one= [...document.querySelectorAll("#snup")];
+    	one.forEach(function(btn) {
+        btn.onclick = function() {
+          document.getElementById("one")
+            .style.display = "none";
+            document.getElementById("two")
+            .style.display = "block";
+        }
+      });
+    	let two= [...document.querySelectorAll("#lgn")];
+    	two.forEach(function(btn) {
+        btn.onclick = function() {
+          document.getElementById("two")
+            .style.display = "none";
+            document.getElementById("one")
+            .style.display = "block";
+        }
+      });
+      let modalBtns = [...document.querySelectorAll(".button")];
+      modalBtns.forEach(function(btn) {
+        btn.onclick = function() {
+          let modal = btn.getAttribute('data-modal');
+          document.getElementById(modal)
+            .style.display = "block";
+        }
+      });
+      let closeBtns = [...document.querySelectorAll(".close")];
+      closeBtns.forEach(function(btn) {
+        btn.onclick = function() {
+          let modal = btn.closest('.modal');
+          modal.style.display = "none";
+        }
+      });
+      window.onclick = function(event) {
+        if(event.target.className === "modal") {
+          event.target.style.display = "none";
+        }
+      }
+    </script>
+
+			<div class="bubble">
+
+
+					<img src="Images/bubble.png">
+					<img src="Images/bubble.png">
+					<img src="Images/bubble.png">
+					<img src="Images/bubble.png">
+					<img src="Images/bubble.png">
+					<img src="Images/bubble.png">
+					<img src="Images/bubble.png">
+				
+			</div>
+	</div>
+
+			<div  Id="footer1">
+				
+
+					<div id="follow_us">
+						
+						<div class="social_logo"><a href="https://www.instagram.com"><img src="Images/ig.png"></a></div>
+						<div class="social_logo"><a href="https://www.Twitter.com"><img src="Images/tw.png" name="Twitter"></a></div>
+						<div class="social_logo"><a href="About.html"><img src="Images/info.png" name="Info"></a></div>
+						<div class="social_logo"><img src="Images/share.png" name="Share"></div>
+						<div class="social_logo"><a href="https://www.fb.com"><img src="Images/fb.png" name="Facebook"></a></div>
+
+					</div>
+
+					<div id="contact">
+						
+						<div class="gmail_logo"><img src="images/gmail.png" id="gmail_logo"></div>
+						<div id="email_id">ntmishra98shivu@gmail.com</div>
+						<div class="phone"><span>&#9742;</span><h4>+917318409147</h4></div>
+
+					</div>
+
+					<div id="youtube"><img src="images/youtube.png"> <a href="https://www.youtube.com"> <button id="Subbutton">Subscribe Now</button></a></div>
+
+					<a href="#menu"> <button id="join_btn">Jump To Top</button></a>
+
+
+			</div>
+
+
+			<div id="footer2">
+				
+				<span>Copyright &#169; 2017-2021 Booking.com -All Rights Reserved.</span>
+
+			</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
