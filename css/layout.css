@@ -38,6 +38,10 @@ h6 {
     background-color: var(--brand-color-theme-2) !important;
 }
 
+.brand-color-theme-3-bg {
+    background-color: var(--brand-color-theme-3) !important;
+}
+
 .brand-color-theme-whatsapp-bg {
     background-color: var(--brand-whatsapp-color) !important;
 }
@@ -827,3 +831,104 @@ a.email {
 }
 
 /* loading page ends here */
+
+/* footer starts here */
+
+footer p>a>img {
+    width: 200px;
+    filter: invert();
+    margin-bottom: .7rem;
+}
+
+footer .f-footer-menu a {
+    position: relative;
+    font-size: .85rem;
+
+}
+
+footer .f-footer-menu a::after {
+    content: "|";
+    margin-left: 5px;
+    margin-right: 5px;
+    display: inline-block;
+    position: relative;
+}
+
+footer .f-footer-menu a:last-child:after {
+    content: unset;
+}
+
+footer .copyright {
+    font-size: .85rem;
+    padding: 10px;
+    border-top: 1px solid white;
+    background-color: #000;
+}
+
+/* footer ends here */
+
+/* fancy box starts here */
+.fancybox-container {
+
+    z-index: 9999999999999;
+}
+
+/* fancy box ends here */
+
+/* inner page banner starts here */
+
+.fBanner-inner {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    background-image: url("../images/banner-inner-page.jpg");
+    background-attachment: fixed;
+    background-position: center 4rem;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+
+.fBanner-inner>.container {
+    position: relative;
+    z-index: 99;
+}
+
+.fBanner-inner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #00000093;
+}
+
+.fBanner-inner h1 {
+    color: white;
+    font-weight: 600;
+    font-family: var(--brand-body-font);
+    text-shadow: 1px 1px 1px #00000044;
+}
+
+/* inner page banner ends here */
+
+/* FAQ starts here */
+#faq {
+    text-align: justify;
+}
+
+#faq>ul {
+    padding-left: 0;
+}
+
+#faq ul li b,
+#faq ul li strong {
+    font-size: 1.1rem;
+    margin-bottom: .5rem;
+    display: inline-block;
+    margin-top: .5rem;
+}
+
+#faq ul li p,
+#faq ul li ul li {
+    font-size: .85rem;
+}
+
+/* FAQ ends here */
