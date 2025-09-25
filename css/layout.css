@@ -932,3 +932,35 @@ footer .copyright {
 }
 
 /* FAQ ends here */
+
+
+/* contact us starts here */
+
+.contact-us h2 {
+    font-family: var(--brand-body-font);
+    font-weight: 600;
+}
+
+.contact-us form .row .col-12 {
+    padding: 12px;
+}
+
+.contact-us form .row .col-12 input,
+.contact-us form .row .col-12 textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: .85rem;
+    border: 1px solid #dedede !important;
+    padding: 12px;
+}
+
+.contact-us form .row .col-12 textarea {
+    min-height: 150px;
+}
+
+.error {
+    color: #dc3545 !important;
+    font-size: .75rem;
+}
+
+/* contact us ends here */
