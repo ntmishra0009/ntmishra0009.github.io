@@ -115,7 +115,7 @@ body {
 }
 
 .bxsliderhero .bx-wrapper img {
-    max-height: 500px;
+    min-height: 500px;
     object-fit: cover;
 }
 
@@ -163,9 +163,8 @@ body {
 
 /* about starts here */
 .about-section p {
-    font-size: .9rem;
+    font-size: .85rem;
     text-align: justify;
-    letter-spacing: .04em;
 }
 
 .about-section p>b {
@@ -274,36 +273,8 @@ body {
     font-size: .85rem;
 }
 
-.top-header .social-top a {
-    width: 25px;
-    display: inline-block;
-    text-align: center;
-    height: 25px;
-    align-content: center;
-    color: white;
-    border-radius: 3px;
-    margin-right: 7px;
-}
-
 .top-header .social-top .item a:last-child {
     margin-right: 0;
-}
-
-.top-header .social-top a.facebook {
-    background-color: #4268b3;
-}
-
-.top-header .social-top a.instagram {
-    --contrast-color: #ffdcff;
-    background-image: linear-gradient(115deg, rgb(249, 206, 52), rgb(238, 42, 123), rgb(98, 40, 215));
-}
-
-.top-header .social-top a.phone {
-    background-color: #000;
-}
-
-.top-header .social-top a.whatsapp {
-    background-color: var(--brand-whatsapp-color);
 }
 
 /* top header ends here */
@@ -317,6 +288,11 @@ body {
     background-color: white;
 }
 
+.fHeader.active {
+    background-color: var(--brand-color-theme-1);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
 .fHeader nav {
     padding: 0;
 }
@@ -325,11 +301,19 @@ body {
     width: 90px;
 }
 
+.fHeader.active .navbar-brand img {
+    filter: invert();
+}
+
 .fHeader nav .nav-link {
     font-weight: 600;
     color: var(--brand-color-theme-2);
     letter-spacing: var(--letter-spacing);
     font-size: .85rem;
+}
+
+.fHeader.active nav .nav-link {
+    color: white;
 }
 
 /* header ends here */
@@ -648,12 +632,11 @@ body {
 }
 
 .f-testimonial-carousel .item .inr-item-carousel .f-profile-text p,
-#modalText
-{
+#modalText {
     font-size: .9rem;
 }
-.f-profile-text .read-more-btn
-{
+
+.f-profile-text .read-more-btn {
     display: inline-block;
     cursor: pointer;
     font-size: 16px;
@@ -664,9 +647,183 @@ body {
     outline: none;
     background-color: transparent;
     font-size: .9rem;
-    &:hover
-    {
+
+    &:hover {
         text-decoration: underline;
     }
 }
+
 /* testimonial ends here */
+
+/* modal onload popup starts here */
+
+.modal-backdrop {
+    z-index: 99999;
+}
+
+.modalonloadpophomepage {
+    z-index: 999999999999;
+}
+
+.modalonloadpophomepage .modal-dialog {
+    max-width: 90%;
+    width: 650px;
+}
+
+.modalonloadpophomepage .modal-dialog .modal-content {
+    border-radius: 0;
+
+    .modal-close-popup {
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        border-radius: 50px;
+        background-color: black;
+        width: 30px;
+        height: 30px;
+        border: 0;
+        outline: 0;
+
+        img {
+            width: 12px;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--brand-body-font);
+    }
+
+    .heading-popup {
+        font-size: 1.2rem;
+    }
+}
+
+.modalonloadpophomepage .modal-dialog .modal-content img.popup-image {
+    max-height: 450px;
+    object-fit: cover;
+}
+
+.modalonloadpophomepage .modal-dialog .modal-content .popup-logo {
+    width: 140px;
+    margin-bottom: 1.2rem;
+}
+
+a.facebook {
+    width: 25px;
+    display: inline-block;
+    text-align: center;
+    height: 25px;
+    align-content: center;
+    color: white;
+    border-radius: 3px;
+    margin-right: 7px;
+    background-color: #4268b3;
+}
+
+a.instagram {
+    width: 25px;
+    display: inline-block;
+    text-align: center;
+    height: 25px;
+    align-content: center;
+    color: white;
+    border-radius: 3px;
+    margin-right: 7px;
+    background-image: linear-gradient(115deg, rgb(249, 206, 52), rgb(238, 42, 123), rgb(98, 40, 215))
+}
+
+a.phone {
+    width: 25px;
+    display: inline-block;
+    text-align: center;
+    height: 25px;
+    align-content: center;
+    color: white;
+    border-radius: 3px;
+    margin-right: 7px;
+    background-color: #000;
+}
+
+a.whatsapp {
+    width: 25px;
+    display: inline-block;
+    text-align: center;
+    height: 25px;
+    align-content: center;
+    color: white;
+    border-radius: 3px;
+    margin-right: 7px;
+    background-color: var(--brand-whatsapp-color);
+}
+
+a.email {
+    width: 25px;
+    display: inline-block;
+    text-align: center;
+    height: 25px;
+    align-content: center;
+    color: white;
+    border-radius: 3px;
+    margin-right: 7px;
+    background-color: #EC4134;
+}
+
+/* modal onload popup ends here */
+
+/* loading page starts here */
+
+/* Fullscreen loading overlay */
+#loading-widget {
+    position: fixed;
+    inset: 0;
+    background-color: var(--brand-color-theme-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999999999999999999999999999;
+    gap: 20px;
+}
+
+/* Logo animation */
+#loading-logo {
+    width: 150px;
+    height: auto;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+/* Loading text styling */
+#loading-text {
+    font-size: 1.5rem;
+    color: var(--brand-color-theme-3);
+    font-weight: 600;
+    animation: pulse 2s infinite ease-in-out;
+    user-select: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+        filter: drop-shadow(0 0 0px #fff);
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+        filter: drop-shadow(0 0 15px #fff);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: drop-shadow(0 0 0px #fff);
+    }
+}
+
+/* loading page ends here */

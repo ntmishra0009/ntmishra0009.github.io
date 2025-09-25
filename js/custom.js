@@ -1,6 +1,29 @@
+// wow js installation code
+
 new WOW().init();
 
+// make header active on scroll
 
+$(window).on('scroll', function () {
+    if ($(this).scrollTop() > 41) {
+        $('.fHeader').addClass('active');
+    } else {
+        $('.fHeader').removeClass('active');
+    }
+});
+
+// modal load 
+$(window).on('load', function () {
+    $('#modalonloadpophomepage').modal('show');
+});
+
+// window loading 
+
+$(window).on('load', function () {
+    $('#loading-widget').fadeOut(500, function () {
+        $('#main-content').fadeIn(300);
+    });
+});
 
 // testimonial starts here
 
