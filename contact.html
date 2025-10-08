@@ -64,6 +64,7 @@
         }
         }
     </script>
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
 
     <link rel="stylesheet"
@@ -125,7 +126,7 @@
                 <a class="navbar-brand col-auto" href="index.html"><img src="images/logo-without-bg.png"
                         alt="The Scented Corner logo"></a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                <button class="navbar-toggler shadow-none rounded-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -153,7 +154,7 @@
     <!-- header section ends here -->
 
 
-    <div class="container contact-us">
+    <div class="container contact-us mt-5">
         <div class="row justify-content-center">
             <div class="col-12 col-md-9 col-lg-7">
                 <h2 class="fs-4 text-center brand-color-theme-1-text">Fill The Form For Your Query Or Contact Us.</h2>
@@ -260,9 +261,63 @@
     <script src="js/custom.js"></script>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
 
+            form.addEventListener('submit', function (e) {
+                let isValid = true;
 
+                // Clear previous errors
+                const errorMessages = form.querySelectorAll('.error-message');
+                errorMessages.forEach(msg => msg.remove());
+
+                // Name validation
+                const name = form.querySelector('input[name="Name"]');
+                const namePattern = /^[A-Za-z\s]{2,}$/;
+                if (!namePattern.test(name.value.trim())) {
+                    showError(name, "Please enter a valid name (only letters and spaces, min 2 characters).");
+                    isValid = false;
+                }
+
+                // Email validation
+                const email = form.querySelector('input[name="Email"]');
+                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                if (!emailPattern.test(email.value.trim())) {
+                    showError(email, "Please enter a valid email address.");
+                    isValid = false;
+                }
+
+                // Phone validation
+                const phone = form.querySelector('input[name="Phone"]');
+                const phonePattern = /^[0-9]{10,15}$/;
+                if (!phonePattern.test(phone.value.trim())) {
+                    showError(phone, "Please enter a valid phone number (10 to 15 digits).");
+                    isValid = false;
+                }
+
+                // Message validation
+                const message = form.querySelector('textarea[name="Message"]');
+                if (message.value.trim().length < 10) {
+                    showError(message, "Message must be at least 10 characters long.");
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    e.preventDefault(); // Stop form submission
+                }
+            });
+
+            function showError(input, message) {
+                const error = document.createElement('div');
+                error.classList.add('error-message');
+                error.style.color = 'red';
+                error.style.fontSize = '0.7rem';
+                error.textContent = message;
+                input.parentNode.appendChild(error);
+            }
+        });
     </script>
+
 </body>
 
 </html>

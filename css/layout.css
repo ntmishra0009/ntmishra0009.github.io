@@ -958,9 +958,113 @@ footer .copyright {
     min-height: 150px;
 }
 
-.error {
-    color: #dc3545 !important;
+.error-message {
     font-size: .75rem;
+    margin-top: 10px;
 }
 
 /* contact us ends here */
+
+
+/* *************************** */
+/* Responsive start here */
+/* *************************** */
+
+
+@media(max-width:991.9px) {
+    #navbarNav {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 5.5rem;
+        background-color: transparent;
+        padding: 0px 20px;
+    }
+
+    #navbarNav ul {
+        background-color: white;
+    }
+
+    #navbarNav ul>li>a {
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+
+    .fHeader.active #navbarNav ul>li>a {
+        color: var(--brand-color-theme-1);
+    }
+
+    #navbarNav ul>li>a:hover {
+        background-color: var(--brand-color-theme-1);
+        color: white;
+    }
+
+    .fHeader.active #navbarNav ul>li>a:hover {
+        color: white;
+    }
+
+    .fHeader.active .navbar-toggler-icon {
+        filter: invert(1);
+    }
+}
+
+@media(max-width:767.9px) {
+    .top-header .mail-top {
+        width: 25px;
+        display: inline-block;
+        text-align: center;
+        height: 25px;
+        align-content: center;
+        color: white;
+        border-radius: 3px;
+        margin-right: 7px;
+        background-color: #EC4134;
+    }
+
+    .bxsliderhero .bx-wrapper .fBannerText h3 {
+        font-size: 1.75rem;
+        min-height: 170px;
+    }
+
+    .ticker-tape span {
+        font-size: .8rem;
+        padding: 7px 0;
+    }
+
+    .about-section .stats-item>.row .stat {
+        padding: .65rem;
+    }
+
+    .about-section .stats-item>.row .stat .num {
+        font-size: 1rem;
+    }
+
+    .about-section .stats-item>.row .stat .label {
+        font-size: .85rem;
+    }
+
+    .title-products {
+        font-size: 1rem;
+    }
+
+    .procucts-card .products-text .prices span,
+    .procucts-card .products-text .size-and-weight .size,
+    .procucts-card .products-text .size-and-weight .weight {
+        font-size: .75rem;
+
+        &::before {
+            font-size: .75rem;
+        }
+    }
+
+    .fBanner-inner {
+        background-position: center 8rem;
+    }
+}
+
+@media(max-width:574.9px) {
+    .fBanner-inner
+    {
+        background-size: cover;
+    }
+}

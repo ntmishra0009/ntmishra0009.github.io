@@ -1,3 +1,5 @@
+
+
 // wow js installation code
 
 new WOW().init();
@@ -132,3 +134,6 @@ $(document).ready(function () {
         }
     });
 });
+
+
+
