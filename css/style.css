@@ -220,7 +220,7 @@ html {
 /* Section 2: Name and Quote */
 .names-header {
     font-family: 'Cinzel Decorative', serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #d4af37;
     margin: 5px 0;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
@@ -389,7 +389,7 @@ html {
 
 .footer-names {
     font-family: 'Cinzel Decorative', serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #d4af37;
     margin-top: 15px;
 }
