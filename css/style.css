@@ -1,0 +1,395 @@
+/* Base Reset & Mobile Lock */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body,
+html {
+    font-family: 'Poppins', sans-serif;
+    background-color: #580000;
+    /* Rich Traditional Maroon Base */
+    color: #fff;
+    overflow-x: hidden;
+    width: 500px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* --- Curtain Loader System --- */
+#loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    overflow: hidden;
+}
+
+.curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #700000 0%, #400000 100%);
+    /* Deep Maroon Shading */
+    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+    z-index: 2001;
+}
+
+.curtain.left {
+    left: 0;
+    transform: translateX(0);
+}
+
+.curtain.right {
+    right: 0;
+    transform: translateX(0);
+}
+
+#loader-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    z-index: 2002;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.4s ease;
+    width: 200px;
+    pointer-events: none;
+}
+
+#loader-content.ready {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+.loader-circle {
+    width: 80px;
+    height: 80px;
+    border: 4px solid rgba(212, 175, 55, 0.2);
+    border-top: 4px solid #d4af37;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    animation: spin 1s linear infinite;
+}
+
+#loader-content.ready .loader-circle {
+    animation: pulse 1.5s infinite alternate;
+    border: 1px dashed #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+    font-size: 2rem;
+    align-content: center;
+}
+
+.loader-text {
+    font-family: 'Cinzel Decorative', serif;
+    color: #d4af37;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Trigger Left and Right Split Open Animations */
+.loaded .curtain.left {
+    transform: translateX(-100%);
+}
+
+.loaded .curtain.right {
+    transform: translateX(100%);
+}
+
+.loaded #loader-content {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.loader-removed {
+    display: none !important;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+/* --- Main Content Layout --- */
+.main-content {
+    position: relative;
+    min-height: 100vh;
+    /* Authentic Indian Card Matte Finish Gradient Texture */
+    background: linear-gradient(180deg, #440505 0%, #4d0000 100%);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.main-content::after {
+    content: "";
+    background: url('../images/image-circle.png') no-repeat center center/contain;
+    top: -1%;
+    left: -2%;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.08;
+    z-index: 0;
+    animation: spin 20s linear infinite;
+}
+
+/* Watermarked Background Lord Ganesha Motif Layer */
+.main-content::before {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 400px;
+    background: url('https://www.nicepng.com/png/full/19-193847_ganesh-ji-logo-png.png') no-repeat center center/contain;
+    opacity: 0.08;
+    /* Soft subtle transparent watermark */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    /* Pushes text details above background image watermark */
+}
+
+/* Common Gold Dividers */
+.section-divider {
+    width: 50%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+    margin: 25px auto;
+}
+
+.section-title {
+    font-family: 'Cinzel Decorative', serif;
+    color: #d4af37;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+/* Section 1: Couple Image Frame */
+.couple-img-frame {
+    width: 190px;
+    height: 190px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    border: 4px double #d4af37;
+    padding: 4px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.couple-img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Section 2: Name and Quote */
+.names-header {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem;
+    color: #d4af37;
+    margin: 5px 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.main-quote {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #f7e7c4;
+    font-weight: 300;
+}
+
+/* Section 3: Ganesh Sloka */
+.ganesha-icon {
+    font-size: 2rem;
+    color: #d4af37;
+    margin-bottom: 5px;
+}
+
+.sloka-hindi {
+    font-size: 0.95rem;
+    color: #d4af37;
+    line-height: 1.7;
+    font-weight: 600;
+    padding: 0 5px;
+}
+
+/* Section 4: Countdown Styling */
+.countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.countdown-box {
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 6px;
+    min-width: 65px;
+    padding: 8px 4px;
+}
+
+.count-num {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #d4af37;
+    display: block;
+}
+
+.count-lbl {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: #f7e7c4;
+    letter-spacing: 1px;
+}
+
+/* Section 5: Scratch Card Design */
+.scratch-container {
+    position: relative;
+    width: 270px;
+    height: 130px;
+    margin: 15px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #d4af37;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.scratch-revealed {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fffdf7;
+    color: #580000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#scratch-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    touch-action: none;
+}
+
+/* Section 6: Blessings */
+.family-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    padding: 15px;
+    margin: 12px 0;
+    border-left: 3px solid #d4af37;
+    text-align: left;
+    border-top: 1px solid rgba(212, 175, 55, 0.1);
+    border-right: 1px solid rgba(212, 175, 55, 0.1);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.family-card h4 {
+    color: #d4af37;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.family-card p {
+    font-size: 0.85rem;
+    color: #f7e7c4;
+}
+
+/* Section 7: Celebrations Card rows */
+.event-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.event-row {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 12px 15px;
+    border-radius: 4px;
+}
+
+.event-name {
+    font-weight: 600;
+    color: #d4af37;
+}
+
+.event-date {
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+/* Section 8: Venue */
+.venue-btn {
+    display: inline-block;
+    background: #d4af37;
+    color: #580000;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Section 9: Contact & Outro */
+.contact-box {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: #f7e7c4;
+}
+
+.footer-names {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 2rem;
+    color: #d4af37;
+    margin-top: 15px;
+}
