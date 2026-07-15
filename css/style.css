@@ -166,7 +166,7 @@ html{
 /* Watermarked Background Lord Ganesha Motif Layer */
 .main-content::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
